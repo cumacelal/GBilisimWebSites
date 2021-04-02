@@ -1,0 +1,68 @@
+.banner.banner-one , .bg-angle , .call-to-action {
+
+    background-image: linear-gradient(
+145deg
+ , #0083FD, #005FE9);
+}
+
+.page-banner {
+    background: #006ef1;
+  }
+
+.site-header .site-main-menu li .sub-menu li a:hover, .site-header .site-main-menu li .sub-menu li a.current_page {
+    color: #0072f3;
+}
+#footer .footer-social-link li a
+{
+  border:0px !important;
+}
+/*Menu Display Overflow*/
+.site-header .site-main-menu li .sub-menu
+{
+  height: 500px;
+  overflow-y: scroll;
+}
+/* width */
+.site-header .site-main-menu li .sub-menu::-webkit-scrollbar,::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.site-header .site-main-menu li .sub-menu::-webkit-scrollbar-track,::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.site-header .site-main-menu li .sub-menu::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+145deg
+, #0083FD, #005FE9);
+};
+}
+
+/* Handle on hover */
+.site-header .site-main-menu li .sub-menu::-webkit-scrollbar-thumb:hover,::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#footer .footer-social-link li a:hover {
+    background: none;
+    border-color: none;
+    color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #1370ef;
+}
+.call-to-action .action-content .title{
+  font-size: 35px;
+}
+.pix-btn {
+    padding: 8px 30px;
+    background: #4fa1fb;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    -webkit-box-shadow: 0px 20px 30px 0px rgb(176 70 70 / 30%);
+    box-shadow: 0px 20px 30px 0px rgb(176 70 70 / 30%);
+}
