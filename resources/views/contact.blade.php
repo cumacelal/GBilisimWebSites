@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('title' , 'Gaziantep Bilişim / İletişim ')
-@extends('layouts.page_banner')
+@section('author' , 'Gaziantep Bilişim')
+@section('description' , 'Kamu ve özel kuruluşlara profesyonel yazılım çözümleri vermektedir.')
+@section('page_banner','contact')
 @section('page_banner_title' , 'İletişim')
 @section('sayfa' , 'İletişim')
 @section('geri' , 'Anasayfa')
@@ -16,9 +18,14 @@
 						<div class="contact-infos">
 							<div class="contact-info">
 								<h3 class="title">Adresimiz</h3>
-								<p class="description">
-                  Gazi, Uzay Parkı, Zübeyde Hanım Blv., 27060 Şehitkamil/Gaziantep
-								</p>
+                <h6>Şube 1</h6>
+                <p class="description">
+                   Gazi, Uzay Parkı, Zübeyde Hanım Blv., 27060 Şehitkamil/Gaziantep
+                </p>
+                <h6>Şube 2</h6>
+                <p class="description">
+                   Çamtepe Mh. Mahmut Tevfik Atay Bul. Gaziantep Teknopark 4/A No:58, 27060 Şehitkamil/Gaziantep
+                </p>
 
 								<div class="info phone">
 									<i class="ei ei-icon_phone" style="color:#007bff"></i>
@@ -32,7 +39,7 @@
 							<!-- /.contact-info -->
 
 							<div class="contact-info">
-								<h3 class="title">Proje olarak yardımamı mı ihtiyacın var ? </h3>
+								<h3 class="title">Proje Görüş ve Öneriniz için ,  </h3>
 								<p class="description">
 									Bizimle İletişime Geçebilirsin<br>
 
@@ -54,7 +61,8 @@
 					<!-- /.col-md-4 -->
 					<div class="col-md-8">
 						<div class="contact-froms">
-							<form action="https://saaspik.pixelsigns.art/saaspik/php/mailer.php" class="contact-form" data-pixsaas="contact-froms">
+							<form action="{{ route('send') }}" class="contact-form" >
+                @csrf
 								<div class="row">
 									<div class="col-md-6">
 										<input type="text" name="name" placeholder="Ad Soyad" required="">
@@ -73,7 +81,7 @@
 									<span class="btn-text">Gönder</span>
 									<i class="fas fa-spinner fa-spin"></i>
 								</button>
-								<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+
 
 
 								<div class="row">

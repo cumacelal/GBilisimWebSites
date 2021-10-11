@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from saaspik.pixelsigns.art/saaspik/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Mar 2021 11:08:21 GMT -->
+
 <head>
 	<!-- Meta Data -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<title>@yield('title')</title>
+	<meta name="author" content="@yield('author')">
+	<meta name="description" content="@yield('description')">
 
-
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
-	<link rel="mask-icon" href="assets/img/fav/safari-pinned-tab.svg" color="#fa7070">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ URL::to('/') }}/assets/img/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ URL::to('/') }}/assets/img/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ URL::to('/') }}/assets/img/fav/favicon-16x16.png">
+	<link rel="mask-icon" href="{{ URL::to('/') }}/assets/img/fav/safari-pinned-tab.svg" color="#fa7070">
 
 	<meta name="msapplication-TileColor" content="#fa7070">
 	<meta name="theme-color" content="#fa7070">
 
 	<!-- Dependency Styles -->
-	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/swiper/css/swiper.min.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/wow/css/animate.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/magnific-popup/css/magnific-popup.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/components-elegant-icons/css/elegant-icons.min.css" type="text/css">
-	<link rel="stylesheet" href="dependencies/simple-line-icons/css/simple-line-icons.css" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/fontawesome/css/all.min.css?v=1" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/swiper/css/swiper.min.css?v=1" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/wow/css/animate.css?v=1" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/magnific-popup/css/magnific-popup.css?v=1" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/components-elegant-icons/css/elegant-icons.min.css?v=1" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/dependencies/simple-line-icons/css/simple-line-icons.css?v=1" type="text/css">
 
 	<!-- Site Stylesheet -->
-	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
+	<link rel="stylesheet" href="{{ URL::to('/') }}/assets/css/app.css?v=1" type="text/css">
+  <link rel="stylesheet" href="{{ URL::to('/') }}/assets/css/custom.css?v=1" type="text/css">
 
 	<!-- Google Web Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -74,6 +75,15 @@
 		<!--=========================-->
 		@include('layouts.navbar')
 
+		@if(  trim($__env->yieldContent('page_banner')) == "contact")
+			   @include('layouts.contact_banner')
+	  @endif
+
+		@if(  trim($__env->yieldContent('page_banner')) == "classic")
+				@include('layouts.page_banner')
+		@endif
+
+
     @yield('page')
 
 		<!--=========================-->
@@ -85,26 +95,57 @@
 	</div><!-- /#site -->
 
 	<!-- Dependency Scripts -->
-	<script src="dependencies/jquery/jquery.min.js"></script>
-	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
-	<script src="dependencies/swiper/js/swiper.min.js"></script>
-	<script src="dependencies/jquery.appear/jquery.appear.js"></script>
-	<script src="dependencies/wow/js/wow.min.js"></script>
-	<script src="dependencies/countUp.js/countUp.min.js"></script>
-	<script src="dependencies/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="dependencies/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="dependencies/jquery.parallax-scroll/js/jquery.parallax-scroll.js"></script>
-	<script src="dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
-	<script src="dependencies/gmap3/js/gmap3.min.js"></script>
+	<script src="{{ URL::to('/') }}/dependencies/jquery/jquery.min.js"></script>
+	<script src="{{ URL::to('/') }}/dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ URL::to('/') }}/dependencies/swiper/js/swiper.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/jquery.appear/jquery.appear.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/wow/js/wow.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/countUp.js/countUp.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/isotope-layout/isotope.pkgd.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/imagesloaded/imagesloaded.pkgd.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/jquery.parallax-scroll/js/jquery.parallax-scroll.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/magnific-popup/js/jquery.magnific-popup.min.js?v=1"></script>
+	<script src="{{ URL::to('/') }}/dependencies/gmap3/js/gmap3.min.js?v=1"></script>
 	<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&amp;ver=2.1.6'></script>
 
 
 	<!-- Site Scripts -->
-	<script src="assets/js/header.js"></script>
-	<script src="assets/js/app.js"></script>
+	<script src="{{ URL::to('/') }}/assets/js/header.js"></script>
+	<script src="{{ URL::to('/') }}/assets/js/app.js"></script>
+	<script src="{{ URL::to('/') }}/assets/js/custom.js"></script>
+				 
+	<script type="text/javascript" src="{{ URL::to('assets/js/waterTank.js') }}"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$('.waterTankHere1').waterTank({
+				width: 420,
+				height: 360,
+				color: '#8bd0ec',
+				level: 83
+			}).on('click', function(event) {
+				$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+			});
+		  
+			$('.waterTankHere2').waterTank({
+				width: 80,
+				height: 360,
+				color: '#f00',
+				level: 80
+			}).on('click', function(event) {
+				$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+			});
+		  
+			$('.waterTankHere3').waterTank({
+				width: 20,
+				height: 360,
+				color: '#2e32ff',
+				level: 80
+			}).on('click', function(event) {
+				$(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+			});
 
-</body>
-
-
-<!-- Mirrored from saaspik.pixelsigns.art/saaspik/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Mar 2021 11:09:38 GMT -->
+		});
+		</script>
+</body> 
 </html>
